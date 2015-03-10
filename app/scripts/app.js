@@ -15,9 +15,10 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'ng-token-auth'
   ])
-  .config(function ($routeProvider) {
+  .config(function ($routeProvider, $authProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -27,7 +28,19 @@ angular
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
       })
+      .when('/sign_in', {
+        templateUrl: 'views/userSession/new.html',
+        controller: 'UserSessionCtrl'
+      })
+      .when('/list', {
+        templateUrl: 'views/list.html',
+        controller: 'ListCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
+    $authProvider.configure({
+      apiUrl: 'http://localhost:3000/api'
+    });
   });
+
