@@ -9,13 +9,10 @@
  */
 angular.module('blocitoffApp')
   .controller('UserSessionCtrl', function($scope, $auth) {
-    $scope.handleBtnClick = function() {
-      $auth.submitLogin($scope.loginForm)
-        .then(function(resp) { 
-          console.log(resp);
-        })
-        .catch(function(resp) { 
-          // handle errors
-        });
-    };
+    $scope.$on('auth:login-success', function(ev, user) {
+      alert('Welcome ', user.email);
+    });
+    $rootScope.$on('auth:login-error', function(ev, reason) {
+      alert('auth failed because', reason.errors[0]);
+    });
   });
