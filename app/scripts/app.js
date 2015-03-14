@@ -16,9 +16,10 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
+    'ipCookie',
     'ng-token-auth'
   ])
-  .config(function ($routeProvider, $authProvider, $httpProvider) {
+  .config(function ($routeProvider, $authProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -43,7 +44,5 @@ angular
       apiUrl: 'http://localhost:3000/api',
       controller: 'UserSessionCtrl'
     });
-    var token = $("meta[name=\"csrf-token\"]").attr("content");
-    $httpProvider.defaults.headers.common['X-CSRF-TOKEN'] = token;
   });
 

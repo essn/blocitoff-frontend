@@ -9,5 +9,5 @@
  */
 angular.module('blocitoffApp')
   .controller('MainCtrl', function($scope, $auth, $location) {
-    
+
   });
