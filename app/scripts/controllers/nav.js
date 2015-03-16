@@ -8,7 +8,13 @@
  * Controller of the blocitoffApp
  */
 angular.module('blocitoffApp')
-  .controller('NavCtrl', function ($scope, $rootScope, $auth) {
-        $auth.validateUser();
-    $scope.userItems = $rootScope.isUser ? 'views/partials/authdHeader.html' : 'views/partials/regHeader.html';
-  });
+  .controller('NavCtrl', function ($scope, $rootScope) {
+        $rootScope.userItems;
+        if ($rootScope.user.signedIn) {
+            $rootScope.userItems = 'views/partials/authdHeader.html';
+        }
+
+        else {
+            $rootScope.userItems = 'views/partials/regHeader.html';
+        }
+    });

@@ -17,7 +17,7 @@ angular
     'ngSanitize',
     'ngTouch',
     'ipCookie',
-    'ng-token-auth'
+    'ng-token-auth',
   ])
   .config(function ($routeProvider, $authProvider) {
     $routeProvider
