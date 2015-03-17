@@ -8,6 +8,6 @@
  * Controller of the blocitoffApp
  */
 angular.module('blocitoffApp')
-  .controller('MainCtrl', function($scope, $auth, $location) {
-
+  .controller('MainCtrl', function($rootScope) {
+        $rootScope.hello = "hello";
   });

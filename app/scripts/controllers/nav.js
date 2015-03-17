@@ -9,12 +9,15 @@
  */
 angular.module('blocitoffApp')
   .controller('NavCtrl', function ($scope, $rootScope) {
-        $rootScope.userItems;
-        if ($rootScope.user.signedIn) {
-            $rootScope.userItems = 'views/partials/authdHeader.html';
-        }
+        $rootScope.$on('auth:validation-success', function () {
+            $rootScope.isUser = true;
+        });
 
-        else {
-            $rootScope.userItems = 'views/partials/regHeader.html';
-        }
+        $rootScope.$on('auth:validation-error', function () {
+            $rootScope.isUser = false;
+        });
+
+        //$rootScope.isUser = $rootScope.user.signedIn;
+        //console.log($rootScope.isUser);
+        //$rootScope.userItems = $rootScope.isUser ? 'views/partials/authdHeader.html' : 'views/partials/regheader.html';
     });

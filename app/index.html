@@ -36,11 +36,25 @@
             <a class="navbar-brand" href="#/">blocitoff</a>
           </div>
 
-          <div class="collapse navbar-collapse" id="js-navbar-collapse"  ng-controller="NavCtrl as nav">
-            <div ng-include src="userItems"></div>
-        </div>
+          <!--<div class="collapse navbar-collapse" id="js-navbar-collapse"  ng-controller="NavCtrl as nav">-->
+            <!--<div ng-include src="userItems"></div>-->
+            <!--</div>-->
+            <!--<div ng-controller="NavCtrl as nav">-->
+            <!--<div class="collapse navbar-collapse" id="js-navbar-collapse"  ng-show="nav.isUser">-->
+                <!--<ul class="nav navbar-nav">-->
+                    <!--<li class="active"><a href="#/">Home</a></li>-->
+                    <!--<li><a ng-href="#/list">List</a></li>-->
+                <!--</ul>-->
+
+                <!--{{nav.isUser}}-->
+
+                <!--<ul class="nav navbar-nav pull-right" >-->
+                    <!--<li><a ng-href="#/">Account</a></li>-->
+                    <!--<li><a ng-href="#/" ng-click='signOut()'>Sign out</a></li>-->
+                <!--</ul>-->
+            <!--</div>-->
+            <!--</div>-->
       </div>
-    </div>
 
     <div class="container">
     <div ng-view=""></div>
