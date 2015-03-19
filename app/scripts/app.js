@@ -17,7 +17,7 @@ angular
     'ngSanitize',
     'ngTouch',
     'ipCookie',
-    'ng-token-auth',
+    'ng-token-auth'
   ])
   .config(function ($routeProvider, $authProvider) {
     $routeProvider
@@ -37,6 +37,14 @@ angular
         templateUrl: 'views/list.html',
         controller: 'ListCtrl'
       })
+        .when('/sign_up', {
+            templateUrl: 'views/userRegistration/new.html',
+            controller: 'RegistrationCtrl'
+        })
+        .when('/account', {
+            templateUrl: '../views/user/edit.html',
+            controller: 'UserCtrl'
+        })
       .otherwise({
         redirectTo: '/'
       });

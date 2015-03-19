@@ -1,3 +1,31 @@
-<ul ng-repeat="item in items">
-  <li>{{ item.name }}</li>
-</ul>
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th><h2 class=>My Todo List</h2></th>
+            </tr>
+        </thead>
+    </table>
+
+    <ul ng-repeat="item in items">
+        <li id="list">
+            {{item.name}}
+            <div class="pull-right">
+                Complete
+                <input type="checkbox" ng-click="deleteItem(item.id)">
+            </div>
+            <br>
+            <small class="text-muted">Created: {{item.created_at | date}} | Expires: {{item.expires | date}}</small>
+        </li>
+    </ul>
+    <ul ng-repeat="item in newItem">
+        <li>{{item.name}}</li>
+    </ul>
+
+    <form ng-submit="addItem(newItem.item)" role="form">
+        <div class="form-group">
+            <label for="itemName">Add item</label>
+            <input type="text" ng-model="newItem.item.name" class="form-control" id="itemName" placeholder="Enter a todo item">
+        </div>
+    </form>
+</div>
